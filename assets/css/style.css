@@ -69,12 +69,21 @@ svg{
 }
 
 svg .land:hover{
+  cursor: pointer;
 	fill: rgba(0, 0, 0, 0.1);
 }
 
 #FR-G{
 	transform: translateX(-50px);
 }
+/* A link */
+
+a, a:hover, a:active, a:visited, a:focus{
+  text-decoration: none;
+  color:white;
+}
+
+
 
 .burger-font {
     font-family: 'candara';
@@ -151,7 +160,7 @@ svg .land:hover{
     font-family: candara;
     font-weight: 300;
     text-decoration: none;
-    paddgin-top: 1em;
+    padding-top: 1em;
 }
 
 .b-link img{
@@ -257,15 +266,16 @@ header{
 }
 
 .site-title {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
     margin-bottom: 0.7%;
-    width: 25vw;
     height: 9vh;
 }
+
+#logoCentre{
+    text-align: center;
+}
 .header-icons {
-    margin-top: 1%;
+    margin-top:3%;
+    margin: 1% ;
     width: 32px;
 }
 .tind-card {
@@ -276,8 +286,9 @@ header{
 }
 
 #france {
-    padding-top: 1em;
+    padding-top: 1.89em;
     width: 32px;
+    cursor: pointer;
 }
 
 .nom-musee {
@@ -301,7 +312,7 @@ header{
 }
 .green-heart, .red-cross, .yellow-star
 {
-  width: 100%;
+  width: 90%;
 }
 
 @media screen and (max-width: 650px) {
@@ -451,9 +462,9 @@ textarea {
     position: absolute;
     display: none;
     width: 40%;
-    padding: 1em;
+    padding: 2em;
     background-color: #c1272d;
-    margin-top:2.4%;
+    margin-top:0%;
     z-index: 100;
     right: 0;
     top: 9%;

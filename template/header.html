@@ -32,31 +32,29 @@
 					}
 				});
 			});
-			
-			
+
+
 			function setCookie(cname, cvalue, exdays) {
 				var d = new Date();
 				d.setTime(d.getTime() + (exdays*24*60*60*1000));
 				var expires = "expires="+ d.toUTCString();
 				document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
-			} 
+			}
 
 		</script>
-		
+
         <!-- BURGER -->
         <!-- Navigation -->
         <div class="container-fluid">
-            <a class="b-link col-lg-2 col-lg-push-1 col-xs-2" href="{{URL}}contact/">
-                <img src="{{URL}}assets/img/envelope.svg" alt="icône contactez nous" class="header-icons">
-            </a>
-            <a class="b-link col-lg-1 col-xs-2" href="{{URL}}apropos/">
-                <img src="{{URL}}assets/img/info.svg" alt="icône à propos" class="header-icons">
-            </a>
-
-            <a href="{{URL}}" class="col-lg-6 col-xs-4">
-                <img src="{{URL}}assets/img/logoDART.svg" class="site-title" alt="Logo du site Date' Art">
-            </a>
-			
+                 <div  class="b-link col-lg-2 col-lg-push-1 col-xs-2" >
+                     <a href="{{URL}}contact/" ><img src="{{URL}}assets/img/envelope.svg" alt="icône contactez nous" class="header-icons"></a>
+                 </div>
+                 <div class="b-link col-lg-1 col-xs-2">
+                     <a  href="{{URL}}apropos/"><img src="{{URL}}assets/img/info.svg" alt="icône à propos" class="header-icons"></a>
+                 </div>
+                 <div id="logoCentre"  class="col-lg-6 col-xs-4 ">
+                     <a href="{{URL}}" ><img src="{{URL}}assets/img/logoDART.svg" class="site-title" alt="Logo du site Date' Art"></a>
+                 </div>
             {{^USER_CONNECT}}
             <div class="btn-header-connexion-content">
                 <a class="btn-header-connexion col-lg-1 col-lg-push-11">
@@ -97,12 +95,12 @@
                     </form>
                 </div>
             </div>
-            {{/USER_CONNECT}} 
+            {{/USER_CONNECT}}
 			{{#USER_CONNECT}}
 			<a class="col-lg-1 col-lg-push-1">
                 <img src="{{URL}}assets/img/france.svg" id="france" alt="Carte de france">
             </a>
-			
+
 			<script>
 				$(document).ready(function(){
 					$('#france').click(function(){
