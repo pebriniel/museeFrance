@@ -1,0 +1,26 @@
+{{>header}}
+
+<link rel="stylesheet" href="{{URL}}/assets/css/favoristyle.css">
+
+<main>
+  <section class="container">
+  {{#SHOW}}
+    <article class="musee">
+	{{#LIST}}
+      <figure>
+          <figcaption class="col-xs-12 col-md-4">
+            <a href="{{URL}}musee/{{id_musee}}/">
+              <p>{{nom_musee}}</p></a>
+            <img src="{{image}}" alt="Photo de musée">
+          </figcaption>
+      </figure>
+	  {{/LIST}}
+    </article>
+	{{/SHOW}}
+	{{^SHOW}}
+		<article class="musee">
+			<p>Vous devez être connecté pour utiliser notre app !</p>
+		</article>
+	{{/SHOW}}
+  </section>
+</main>

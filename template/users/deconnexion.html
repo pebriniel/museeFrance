@@ -1,0 +1,12 @@
+{{>header}}
+
+<meta http-equiv="refresh" content="3; URL={{URL}}">
+
+<main>
+  <div class="alert
+  {{#DISCONNECT}}alert-success{{/DISCONNECT}}
+  {{^DISCONNECT}}alert-warning{{/DISCONNECT}}" role="alert">
+	{{content}}
+  </div>
+
+</main>
