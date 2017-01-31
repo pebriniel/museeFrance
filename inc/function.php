@@ -1,15 +1,15 @@
 <?php
 
 /**
-     * Call Mustach with file html and array content
+     * affiche le résultat de moustache
      * 
-	 * @param string 	$file	the file of html template
-     * @param array		$array 	the array content for template
+	 * @param string 	$file	nom du fichier html à chargé
+     * @param array		$array 	contient les données à faire afficher
      * 
-     * @return string  	Returns an echo of template html
+     * @return string  	affiche le résultat de moustache
      * 
      * @access public
-     *  
+     * 
      */
 	 
 function callTemplate($file, $array = array()){
@@ -31,12 +31,12 @@ function callTemplate($file, $array = array()){
 }
 
 /**
-     * Call Mustach with file html and array content
+     * retourne le résultat de moustache
      * 
-	 * @param string 	$file	name file html 
-     * @param array		$array 	the array content for template
+	 * @param string 	$file	nom du fichier html à chargé
+     * @param array		$array 	contient les données à faire afficher
      * 
-     * @return string  	Returns an string of template html
+     * @return string  	retourne le résultat de moustache
      * 
      * @access public
      * 
@@ -61,11 +61,11 @@ function callTemplateReturn($file, $array = array()){
 }
 
 /**
-     * Call a battery test for entry of user
+     * Fonction qui permet de tester les valeurs entrés par l'utilisateur
      * 
-	 * @param string 	$data	entry of user
+	 * @param string 	$data		entrée de l'utilisateur
 	 * 
-     * @return string  	Returns a string clean
+     * @return string  	Returns		renvoi une entrée clean de l'utilisateur
      * 
      * @access public
      * 
@@ -79,12 +79,12 @@ function test_input($data) {
 }
 
 /**
-     * Send a e-mail to user
+     * Fonction qui permet l'envoi d'un e-mail
      * 
-	 * @param string 	$mail		e-mail of user
-	 * @param string 	$sujet		object e-mail
-	 * @param string 	$fichier	file template html for e-mail
-	 * @param array 	$var		array content key and value replace in template html
+	 * @param string 	$mail		l'e-mail de l'utilisateur
+	 * @param string 	$sujet		Objet de l'e-mail (sujet)
+	 * @param string 	$fichier	fichier html faisant le corps de l'e-mail (template)
+	 * @param array 	$var		array contenant les différents clés et valeurs devant être changé dans le fichier html
 	 * 
      * 
      * @access public

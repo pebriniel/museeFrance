@@ -2,8 +2,6 @@
 
 if(isset($index)){
 
-  callTemplate("contact");
-
 	function sendEmail($email,$destinataire,$message){
 
 
@@ -13,50 +11,51 @@ if(isset($index)){
     	// En-têtes additionnels
     	$headers[] = "To: destinataire <". $destinataire .">";
     	$headers[] ="From : <". $email .">";
-
-
-
-
-    	$nbErreurs = 0;
-    	$msgErreurs = "";
-    	$emailValid = true;
-
-
-    	$expediteur= $email;
-    	$objet = "Demande d'information";
-
-    	if (empty($email)) {
-    		$nbErreurs ++;
-    		$msgErreurs .="Email<br />";
-    	}
-    	else
-    	{
-    		if(!filter_var($email, FILTER_VALIDATE_EMAIL))
-    		{
-    			$emailValid = false;
-    			print("Email Invalide");
-    		}
-
-
-    		if($nbErreurs!=0)
-    		{
-    			print("Champ(s) manquant(s) :<br />".$msgErreurs);
-    		}
-    		else
-    		{
-    			if($emailValid)
-    			{
-    				mail ( $destinataire,$objet,$message,implode("\r\n",$headers));
-    			}
-    		}
-    	}
-
-}
-if(isset($_REQUEST['connexion'])){
-  $email=$_REQUEST['email'];
-  $destinataire="boussad.s@codeur.online";
-  $message=$_REQUEST['message'];
-
-  sendEmail($email,$destinataire,$message);
-}
+		
+		$objet = "Demande d'information";
+ 
+		mail ( $destinataire,$objet,$message,implode("\r\n",$headers));
+	}
+	
+	$array = array();
+	
+	if(isset($_REQUEST['connexion'])){
+	  $email=test_input($_REQUEST['email']);
+	  $destinataire="boussad.s@codeur.online";
+	  $message=test_input($_REQUEST['message']);
+		$err = "";
+	  
+		if($email && $message){
+			if(!filter_var($email, FILTER_VALIDATE_EMAIL))
+			{
+				$form = true;
+				$ok = false;
+				$refresh = false;
+				$content = "E-mail invalide";
+			}
+			else{
+				$form = false;
+				$content = "Message envoyé";
+				$ok = true;
+				$refresh = true;
+				sendEmail($email,$destinataire,$message);
+			}
+			$array = array('FORM' => $form, 'CONTENT' => $content);
+		}
+		else{
+			$form = true;
+			$content = "Remplissez tous les champs";
+			$ok = false;
+			$refresh = false;
+		}
+	}
+	else{
+		$form = true;
+		$content = "";
+		$ok = false;
+		$refresh = false;
+	}
+	
+	$array = array('FORM' => $form, 'CONTENT' => $content, 'REFRESH' => $refresh, 'OK' => $ok);
+	callTemplate("contact", $array);
 }
