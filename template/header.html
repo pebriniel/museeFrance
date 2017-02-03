@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
+
+    <title>Date'Art</title>
+
+    <link rel="stylesheet" href="{{URL}}assets/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="{{URL}}assets/css/leaflet.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{{URL}}assets/css/style.css">
+
+    <script src="{{URL}}assets/js/leaflet/leaflet.js"></script>
+    <script src="{{URL}}assets/js/jquery.js"></script>
+    <script src="{{URL}}assets/js/bootstrap.min.js"></script>
+
+
+</head>
+
+<body>
+    <header>
+        <script>
+            $(document).ready(function() {
+                $('.btn-header-connexion').click(function() {
+                    if ($('#header-connexion').css('display') == 'none') {
+                        $('#header-connexion').show();
+                    } else {
+                        $('#header-connexion').hide();
+                    }
+                });
+            });
+
+
+            function setCookie(cname, cvalue, exdays) {
+                var d = new Date();
+                d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+                var expires = "expires=" + d.toUTCString();
+                document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+            }
+        </script>
+
+        <!-- BURGER -->
+        <!-- Navigation -->
+        <div class="container-fluid">
+            <div id="logoCentre" class="col-md-2 pull-left">
+                <a href="{{URL}}">
+                    <img src="{{URL}}assets/img/logoDART.svg" class="site-title" alt="Logo du site Date' Art">
+                </a>
+            </div>
+            {{#USER_CONNECT}}
+            <div class="b-link col-lg-1 col-md-1 col-xs-2">
+                <a href="{{URL}}favoris/">
+                    <img src="{{URL}}assets/img/star.svg" alt="Icone Favoris" class="header-icons">
+                    <span class="badge badge-count-like">{{NB_MUSEE_HEADER_LIKE}}</span>
+                </a>
+            </div>
+            <div class="b-link col-lg-1 col-md-1 col-xs-2">
+                <a>
+                    <img src="{{URL}}assets/svg/pin.svg" alt="Icone Pin Marker" id="france" class="header-icons">
+                </a>
+            </div>
+
+            {{/USER_CONNECT}} {{^USER_CONNECT}}
+            <div class="btn-header-connexion-content">
+                <a class="btn-header-connexion col-lg-1 col-lg-push-11">
+                    <span class="fa fa-user"></span>
+                </a>
+                <div id="header-connexion">
+                    <form class="form-horizontal" method="post" action="{{url}}connexion/">
+                        <fieldset>
+                            <!-- Form Name -->
+                            <legend>Connexion</legend>
+
+                            <!-- Text input-->
+                            <div class="form-group">
+                                <label class="col-md-4 control-label" for="textinput">E mail</label>
+                                <div class="col-md-6">
+                                    <input id="textinput" name="connexionEmail" placeholder="email" class="form-control input-md" type="text">
+                                </div>
+                            </div>
+
+                            <!-- Password input-->
+                            <div class="form-group">
+                                <label class="col-md-4 control-label" for="passwordinput">Mot de passe</label>
+                                <div class="col-md-6">
+                                    <input id="passwordinput" name="connexionMDP" placeholder="Mot de passe" class="form-control input-md" type="password">
+                                </div>
+                            </div>
+
+                            <!-- Button -->
+                            <div class="form-group">
+                                <label class="col-md-4 control-label" for=""></label>
+                                <div class="col-md-12">
+                                    <div class="row">
+                                        <button name="connexion" class="btn btn-start-order">Connexion</button>
+                                        <a class="btn btn-start-order" href="{{URL}}inscription/">
+                                          Inscription
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+            {{/USER_CONNECT}}
+
+            <script>
+                $(document).ready(function() {
+                    $('#france').click(function() {
+                        console.log('ok');
+                        setCookie('region', 0, -1);
+                        window.location.replace('{{URL}}');
+                    });
+                });
+            </script>
+
+
+    </header>

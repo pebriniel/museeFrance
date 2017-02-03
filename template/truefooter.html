@@ -1,0 +1,21 @@
+<footer id="footer">
+    <div class="container b-link">
+        <div class="col-lg-4 col-xs-4">
+            <a href="{{URL}}contact/">
+                <img src="{{URL}}assets/img/envelope.svg" alt="icône contactez nous" class="footer-icons">
+            </a>
+        </div>
+        <div class="col-lg-4 col-xs-4">
+            <a href="{{URL}}apropos/">
+                <img src="{{URL}}assets/img/info.svg" alt="icône à propos" class="footer-icons">
+            </a>
+        </div>
+    {{#USER_CONNECT}}
+        <div class="col-lg-4 col-xs-4">
+            <a href="{{URL}}deconnexion/">
+                <img src="{{URL}}assets/img/logout.svg" alt="icône contactez nous" class="footer-icons">
+            </a>
+        </div>
+    {{/USER_CONNECT}}
+    </div>
+</footer>

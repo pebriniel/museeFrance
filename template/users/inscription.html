@@ -1,0 +1,57 @@
+{{>header}}
+<main>
+
+    <div>
+        {{#status}}
+            {{#OK}}
+    			<meta http-equiv="refresh" content="1; URL={{URL}}">
+    		{{/OK}}
+            <div class="alert text-center
+        			{{#OK}}alert-success{{/OK}}
+        			{{^OK}}alert-warning{{/OK}}" role="alert">
+        		{{content}}
+        	</div>
+        {{/status}}
+    </div>
+    {{#SHOW}}
+    <div class="container">
+      <h2 class="inscrivez col-lg-12">Inscrivez vous dès maintenant pour accéder à toutes nos fonctionnalités et sauvegarder vos musées favoris !</h2>
+        <form id="form-inscription" class="form-horizontal" method="post" action="#">
+            <!-- Text input-->
+            <div class="form-group">
+                <label class="col-xs-11 col-xs-push-1 col-sm-2 col-sm-push-2 col-md-2 col-md-push-3 col-lg-2 col-lg-push-2 control-label" for="Nom">Nom</label>
+                <div class="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-push-1 col-md-4 col-md-push-2 col-lg-4 col-lg-push-1">
+                    <input id="input-inscription-nom" name="insc_nom" placeholder="John Doe" class="form-control input-md" type="text" />
+                </div>
+            </div>
+
+            <!-- Text input-->
+            <div class="form-group">
+                <label class="col-xs-11 col-xs-push-1 col-sm-2 col-sm-push-2 col-md-2 col-md-push-3 col-lg-2 col-lg-push-2 control-label" for="Pseudo">E-mail</label>
+                <div class="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-push-1 col-md-4 col-md-push-2 col-lg-4 col-lg-push-1">
+                    <input id="input-inscription-email" name="insc_email" placeholder="monadresse@adresse.fr" class="form-control input-md" type="text" />
+                </div>
+            </div>
+
+            <!-- Password input-->
+            <div class="form-group">
+                <label class="col-xs-11 col-xs-push-1 col-sm-2 col-sm-push-2 col-md-2 col-md-push-3 col-lg-2 col-lg-push-2 control-label" for="Mot-de-passe">Mot-de-passe</label>
+                <div class="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-push-1 col-md-4 col-md-push-2 col-lg-4 col-lg-push-1">
+                    <input id="input-inscription-password" name="insc_password" placeholder="*********" class="form-control input-md" type="password" />
+                </div>
+            </div>
+
+            <!-- Button -->
+            <div class="form-group">
+                <label class="control-label" for="Inscription"></label>
+                <div>
+                    <center><button id="Incription" name="inscription" class="btn btn-start-order">Inscription</button>
+                    </center>
+                </div>
+            </div>
+        </form>
+    </div>
+    {{/SHOW}}
+</main>
+
+{{>truefooter}}

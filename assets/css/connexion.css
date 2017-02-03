@@ -1,0 +1,22 @@
+*{
+	margin:0px;
+	padding:0px;
+	box-sizing: border-box;
+   
+   
+}
+
+.co {
+    margin-top: 3%;
+    background: none;
+    border: solid 1px;
+    color: #2f323a;
+    font-size: 2rem;
+    line-height: inherit;
+    text-transform: uppercase;
+ 
+}
+
+#co{
+    text-align: center;
+}

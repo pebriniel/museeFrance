@@ -1,0 +1,28 @@
+{{>header}}
+
+<main>
+  <section class="container">
+  {{#SHOW}}
+    <article class="musee row-mas">
+	{{#LIST}}
+      <figure>
+          <figcaption class="col-xs-12 col-md-4" style="width: 100%">
+            <a href="{{URL}}musee/{{id_musee}}/">
+              <p>{{nom_musee}}</p>
+              <div class="center-cropped">
+                  <img src="{{image}}" alt="Photo de musée">
+              </div>
+          </a>
+          </figcaption>
+      </figure>
+	  {{/LIST}}
+    </article>
+	{{/SHOW}}
+	{{^SHOW}}
+		<article class="musee text-center">
+			<p>Vous devez être connecté pour utiliser notre app !</p>
+		</article>
+	{{/SHOW}}
+  </section>
+</main>
+{{>truefooter}}

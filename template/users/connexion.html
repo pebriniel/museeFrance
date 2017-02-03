@@ -1,0 +1,44 @@
+{{>header}}
+ <link rel="stylesheet" href="{{URL}}assets/css/connexion.css">
+<main>
+{{#SHOW}}
+	{{#status}}
+
+		{{#REFRESH}}
+			<meta http-equiv="refresh" content="1; URL={{URL}}">
+		{{/REFRESH}}
+			<div class="alert text-center
+			{{#OK}}alert-success{{/OK}}
+			{{^OK}}alert-warning{{/OK}}" role="alert">
+		{{content}}
+	{{/status}}
+	</div>
+{{^OK}}
+<form class="form-horizontal" method="post">
+  <div class="form-group">
+   		<label class="col-md-4 col-xs-11 col-xs-push-1 col-lg-2 col-push-2 control-label" for="Pseudo">Email</label>
+                <div class="col-md-6 col-xs-10 col-xs-offset-1">
+                    <input id="input-inscription-email" name="connexionEmail" placeholder="monadresse@adresse.fr" class="form-control input-md" type="text" />
+                </div>
+            </div>
+  			<div class="form-group">
+                <label class="col-md-4 col-xs-11 col-xs-push-1 col-lg-2 col-push-2 control-label" for="Password">Password</label>
+                <div class="col-md-6 col-xs-10 col-xs-offset-1">
+                    <input  name="connexionMDP" placeholder="password" class="form-control input-md" type="password" />
+                </div>
+            </div>
+  <div class="form-group" id="co">
+    <div class="col-sm-offset-2 col-sm-10" class="co">
+      <input type="submit" class="co" name="connexion" value="connexion"/>
+    </div>
+  </div>
+</form>
+{{/OK}}
+{{/SHOW}}
+{{^SHOW}}
+	{{content}} <a href="{{URL}}deconnexion/">Déconnexion</a>
+  <meta http-equiv="refresh" content="3; URL={{URL}}">
+{{/SHOW}}
+</main>
+
+{{>truefooter}}
