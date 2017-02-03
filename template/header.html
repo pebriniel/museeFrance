@@ -21,6 +21,7 @@
 
 <body>
     <header>
+<<<<<<< HEAD
         <script>
             $(document).ready(function() {
                 $('.btn-header-connexion').click(function() {
@@ -40,10 +41,34 @@
                 document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
             }
         </script>
+=======
+		<script>
+			$(document).ready(function(){
+				$('.btn-header-connexion').click(function(){
+					if($('#header-connexion').css('display') == 'none'){
+						$('#header-connexion').show();
+					}
+					else{
+						$('#header-connexion').hide();
+					}
+				});
+			});
+
+
+			function setCookie(cname, cvalue, exdays) {
+				var d = new Date();
+				d.setTime(d.getTime() + (exdays*24*60*60*1000));
+				var expires = "expires="+ d.toUTCString();
+				document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+			}
+
+		</script>
+>>>>>>> 64a51324a7dfc5dd333ef4aa8363875f194e27a3
 
         <!-- BURGER -->
         <!-- Navigation -->
         <div class="container-fluid">
+<<<<<<< HEAD
             <div id="logoCentre" class="col-md-2 pull-left">
                 <a href="{{URL}}">
                     <img src="{{URL}}assets/img/logoDART.svg" class="site-title" alt="Logo du site Date' Art">
@@ -66,6 +91,21 @@
             <div class="btn-header-connexion-content">
                 <a class="btn-header-connexion col-lg-1 col-lg-push-11">
                     <span class="fa fa-user"></span>
+=======
+                 <div  class="b-link col-lg-2 col-lg-push-1 col-xs-2" >
+                     <a href="{{URL}}contact/" ><img src="{{URL}}assets/img/envelope.svg" alt="icône contactez nous" class="header-icons"></a>
+                 </div>
+                 <div class="b-link col-lg-1 col-xs-2">
+                     <a  href="{{URL}}apropos/"><img src="{{URL}}assets/img/info.svg" alt="icône à propos" class="header-icons"></a>
+                 </div>
+                 <div id="logoCentre"  class="col-lg-6 col-xs-4 ">
+                     <a href="{{URL}}" ><img src="{{URL}}assets/img/logoDART.svg" class="site-title" alt="Logo du site Date' Art"></a>
+                 </div>
+            {{^USER_CONNECT}}
+            <div class="btn-header-connexion-content">
+                <a class="btn-header-connexion col-lg-1 col-lg-push-11">
+                    <span class="glyphicon glyphicon-user"></span>
+>>>>>>> 64a51324a7dfc5dd333ef4aa8363875f194e27a3
                 </a>
                 <div id="header-connexion">
                     <form class="form-horizontal" method="post" action="{{url}}connexion/">
@@ -76,7 +116,11 @@
                             <!-- Text input-->
                             <div class="form-group">
                                 <label class="col-md-4 control-label" for="textinput">E mail</label>
+<<<<<<< HEAD
                                 <div class="col-md-6">
+=======
+                                <div class="col-md-4">
+>>>>>>> 64a51324a7dfc5dd333ef4aa8363875f194e27a3
                                     <input id="textinput" name="connexionEmail" placeholder="email" class="form-control input-md" type="text">
                                 </div>
                             </div>
@@ -84,7 +128,11 @@
                             <!-- Password input-->
                             <div class="form-group">
                                 <label class="col-md-4 control-label" for="passwordinput">Mot de passe</label>
+<<<<<<< HEAD
                                 <div class="col-md-6">
+=======
+                                <div class="col-md-4">
+>>>>>>> 64a51324a7dfc5dd333ef4aa8363875f194e27a3
                                     <input id="passwordinput" name="connexionMDP" placeholder="Mot de passe" class="form-control input-md" type="password">
                                 </div>
                             </div>
@@ -92,6 +140,7 @@
                             <!-- Button -->
                             <div class="form-group">
                                 <label class="col-md-4 control-label" for=""></label>
+<<<<<<< HEAD
                                 <div class="col-md-12">
                                     <div class="row">
                                         <button name="connexion" class="btn btn-start-order">Connexion</button>
@@ -99,6 +148,11 @@
                                           Inscription
                                         </a>
                                     </div>
+=======
+                                <div class="col-md-4">
+                                    <button id="" name="connexion" class="btn btn-primary">Connexion</button>
+                                    <a href="{{URL}}inscription/" class="btn btn-success">Inscription</a>
+>>>>>>> 64a51324a7dfc5dd333ef4aa8363875f194e27a3
                                 </div>
                             </div>
 
@@ -107,6 +161,7 @@
                 </div>
             </div>
             {{/USER_CONNECT}}
+<<<<<<< HEAD
 
             <script>
                 $(document).ready(function() {
@@ -118,5 +173,29 @@
                 });
             </script>
 
+=======
+			{{#USER_CONNECT}}
+			<a class="col-lg-1 col-lg-push-1">
+                <img src="{{URL}}assets/img/france.svg" id="france" alt="Carte de france">
+            </a>
+
+			<script>
+				$(document).ready(function(){
+					$('#france').click(function(){
+						console.log('ok');
+						setCookie('region', 0, -1);
+						window.location.replace('{{URL}}');
+					});
+				});
+			</script>
+
+            <div class="btn-header-connexion-content">
+                <a href="{{URL}}deconnexion/" class="btn-header-connexion col-lg-1 col-lg-push-11">
+                    <span class="glyphicon glyphicon-log-out"></span>
+                </a>
+            </div>
+            {{/USER_CONNECT}}
+        </div>
+>>>>>>> 64a51324a7dfc5dd333ef4aa8363875f194e27a3
 
     </header>

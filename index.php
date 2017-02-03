@@ -86,6 +86,10 @@ if( $match && is_callable( $match['target'] ) ) {
 		call_user_func_array( $match['target'], $match['params'] );
 } else {
 		// no route was matched
+<<<<<<< HEAD
 		// header( $_SERVER["SERVER_PROTOCOL"] . ' 404 Not Found');
 		callTemplate("404page");
+=======
+		header( $_SERVER["SERVER_PROTOCOL"] . ' 404 Not Found');
+>>>>>>> 64a51324a7dfc5dd333ef4aa8363875f194e27a3
 }

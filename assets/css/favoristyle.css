@@ -25,7 +25,10 @@ figcaption img {
   min-height: 450px;
 }
 figcaption p{
+<<<<<<< HEAD
   text-align: center;
+=======
+>>>>>>> 64a51324a7dfc5dd333ef4aa8363875f194e27a3
   font-family: "lithos";
   font-size: 1em;
 }
@@ -33,9 +36,12 @@ a, a:hover, a:visited, a:active, a:focus{
   text-decoration: none;
   color: #c1272d;
 }
+<<<<<<< HEAD
 .museeName {
   text-overflow: ellipsis;
   /* Required for text-overflow to do anything */
   white-space: nowrap;
   overflow: hidden;
 }
+=======
+>>>>>>> 64a51324a7dfc5dd333ef4aa8363875f194e27a3

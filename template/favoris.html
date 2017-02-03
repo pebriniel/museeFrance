@@ -1,5 +1,6 @@
 {{>header}}
 
+<<<<<<< HEAD
 <main>
   <section class="container">
   {{#SHOW}}
@@ -12,6 +13,20 @@
               <div class="center-cropped">
                   <img src="{{image}}" alt="Photo de musée">
               </div>
+=======
+<link rel="stylesheet" href="{{URL}}/assets/css/favoristyle.css">
+
+<main>
+  <section class="container">
+  {{#SHOW}}
+    <article class="musee">
+	{{#LIST}}
+      <figure>
+          <figcaption class="col-xs-12 col-md-4">
+            <a href="{{URL}}musee/{{id_musee}}/">
+              <p>{{nom_musee}}</p>
+            <img src="{{image}}" alt="Photo de musée">
+>>>>>>> 64a51324a7dfc5dd333ef4aa8363875f194e27a3
           </a>
           </figcaption>
       </figure>
@@ -19,10 +34,17 @@
     </article>
 	{{/SHOW}}
 	{{^SHOW}}
+<<<<<<< HEAD
 		<article class="musee text-center">
+=======
+		<article class="musee">
+>>>>>>> 64a51324a7dfc5dd333ef4aa8363875f194e27a3
 			<p>Vous devez être connecté pour utiliser notre app !</p>
 		</article>
 	{{/SHOW}}
   </section>
 </main>
+<<<<<<< HEAD
 {{>truefooter}}
+=======
+>>>>>>> 64a51324a7dfc5dd333ef4aa8363875f194e27a3
